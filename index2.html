@@ -1,0 +1,309 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/base.css">
+
+
+  <meta name="theme-color" content="#fafafa">
+
+  <!--Additional-->
+  <script id="applicationScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script id="applicationScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+ 
+  <!--Leaflet-->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+  <script>
+    $(document).ready(function(){
+  $(".openbtn").click(function(){
+    $("#div1").fadeIn();
+ 
+  });
+});
+  </script>
+ <style>
+   .map {
+    height: 100%;
+    width: 100vw;
+    
+  }
+ </style>
+</head>
+
+<body>
+ <!--NavBar-->
+
+  <nav id="navbar" class="">
+    <div class="nav-wrapper">
+      <!-- Navbar Logo -->
+      <div class="logo">
+        <!-- Logo Placeholder for Inlustration -->
+        <a href="index.html"></a><i class="fab fa-500px"></i>Geoportal | SDI</a>
+      </div>
+  
+      <!-- Navbar Links -->
+        <ul>
+        <li><a href="index.html" class="active"><i class="fa fa-fw fa-home"></i>Home</a></li>|
+        <li><a href="geoportal.html"><i class="fa fa-fw fa-globe"></i>Geoportal</a></li>
+      </ul>
+      <ul class="search-bar">
+        <li>
+          <input type="text" placeholder="Search..">
+</li>
+      </ul>
+        <ul class="topnav-right ">
+            
+            <li><a href="#home"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li><!--
+  --><li><a href="#home"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign in</a></li><!---->
+</ul>
+<ul class="menuIcon openbtn" onclick="openNav()">
+  <li> 
+    <span class="icon icon-bars"></span>
+    <span class="icon icon-bars overlay"></span>
+  </li>
+</ul>
+
+      
+
+    </div>
+  </nav>
+  
+  
+  <!-- Menu Icon -->
+  <div class="sidepanel" id="mySidepanel" ">
+    <ul class="sidenav" style="margin-right: 0 !important;">
+      <li class="dropdown-btn">
+        <a>Data <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+      </li>
+      <div class="dropdown-container">
+        <a href="#">Layers</a>
+        <a href="#">Documents</a>
+        <a href="#">Remote Services</a>
+   
+        <a href="#">Upload Layer</a>
+        <a href="#">Create Layer</a>
+        <a href="#">Upload Document</a>
+      </div>
+      <li class="dropdown-btn">
+        <a>Maps<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+      </li>
+      <div class="dropdown-container">
+        <a href="#">Explore Maps</a>
+        <a href="#">Create Map</a>
+      </div>
+      <li class="dropdown-btn">
+        <a>Apps<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+      </li>    
+      <div class="dropdown-container">
+        <a href="#">Explore Apps</a>
+      </div>
+      <li class="dropdown-btn">
+        <a>About<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+      </li>
+      <div class="dropdown-container">
+        <a href="#">People</a>
+        <a href="#">Groups</a>
+        <a href="#">Group Categories</a>
+
+        <a href="#">Invite Users</a>
+
+      </div>
+    
+ 
+    <li>
+      <a href="#" class="button" href="javascript:void(0)" onclick="closeNav()">
+        <span>C</span><span>L</span><span>O</span><span>S</span><span>E</span>
+       
+        <b class="backgroundHover"></b>
+      </a>
+    </li>
+  </ul>
+  </div>
+
+    <!-- Menu Icon -->
+    <div class="mobileIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+    
+    
+    <div class="overlay-menu">
+      <ul id="menu">
+        <li>
+          <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i><b>Home</b></a>
+        </li>
+        <li>
+          <a href="geoportal.html"><i class="fa fa-globe" aria-hidden="true"></i>Geoportal</a>
+        </li>
+
+
+        </ul>
+    </div>
+<!--Header-->
+<div class="header-a" id="headersection">
+  <h2>Food Security</h2>
+
+
+
+
+  <text style="font-size:25px; font-style: italic;">Spatial Profile</text>
+|
+<text> 
+<span style="font-size:22px; font-style: italic;">Geoportal</span>
+</text>
+</div>
+
+  <!--End of NavBar-->
+    <!--Cards-->
+  <!--<div class="card-wrapper">
+      <h3>Develop. Discover. Deploy: Spatial Data</h3>
+      <div class="cards"><img src="file:///C:/Users/Runguma/Documents/Development/website/html5-boilerplate_v8.0.0/img/svg/laptop.svg" width="100" /><h4>Data</h4></div>
+      <div class="cards"><img src="file:///C:/Users/Runguma/Documents/Development/website/html5-boilerplate_v8.0.0/img/svg/gps%20(1).svg" height="100" width="100" /><h4>Maps</h4></div>
+      <div class="cards"><img src="file:///C:/Users/Runguma/Documents/Development/website/html5-boilerplate_v8.0.0/img/svg/around-the-world.svg" height="100" width="100" /><h4>Information</h4></div>
+    </div>-->
+
+  <!--Search-->
+  <div>
+    <h3>Develop. Discover. Deploy: Spatial Data</h3>
+    <form class="search" action="">
+      <input type="search" placeholder="Search here..." required>
+      <button type="submit">Search</button>
+    </form> 
+    
+  </div>
+
+ 
+
+
+  
+
+  <!-- Add your site or application content here -->
+  <div class="body-content">
+    <h3>Food Security | <u>Tharaka Nithi County.</u></h3>
+  
+    <div class="county-map" id = 'map'>
+      <script src="js/leaflet.js"></script>
+    </div>
+
+    <section class="tabs">
+ 
+      <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+      <label for="tab-1" class="tab-label-1">About the county</label>
+  
+      <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+      <label for="tab-2" class="tab-label-2">Physical</label>
+  
+      <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3"/>
+      <label for="tab-3" class="tab-label-3">Socio-economic</label>
+  
+      <input id="tab-4" type="radio" name="radio-set" class="tab-selector-4"/>
+      <label for="tab-4" class="tab-label-4">Food Security</label>
+  
+      <!--<div class="clear-shadow"></div>-->
+  
+      <div class="content">
+        <div class="content-1">
+         <h3 style="float: left;"><u>About the county.</u></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia leo sit amet diam varius, ac maximus turpis volutpat. Cras interdum nulla orci, eget convallis tellus mollis ac. Quisque nunc mi, vulputate eget mi id, fringilla rhoncus dui. Morbi rhoncus accumsan rhoncus. Pellentesque ac tellus orci. Mauris facilisis sem eu auctor congue. Praesent at nunc leo. Cras ultricies, orci a placerat auctor, felis erat egestas enim, non porttitor lacus metus at nibh. In sit amet lectus fermentum, gravida turpis nec, dapibus arcu. Cras at nisi faucibus, condimentum odio id, mattis justo. Duis malesuada diam rutrum risus dignissim interdum.</p>
+        </div>
+        <div class="content-2">
+          
+          <h3 style="float: left;"><u>Physical Characteristics.</u></h3>
+          <p>Aenean tristique hendrerit sapien in porta. Aliquam feugiat luctus blandit. Cras nunc ex, egestas in consequat ac, egestas vitae lectus. Nunc convallis purus sed ex pretium, sit amet dapibus lorem efficitur. Nulla facilisi. Vivamus ut metus purus. Nam tincidunt faucibus dolor, eget aliquet justo. Nullam turpis ipsum, gravida non lacinia ac, condimentum in sapien. Praesent vulputate dolor ac interdum semper. Nullam sed odio semper, tempor libero ut, pharetra enim. Donec at mattis dolor, eget varius turpis. Aliquam erat volutpat. Nulla bibendum rhoncus felis sed accumsan.     </p>
+    <p>
+    Suspendisse vulputate, leo sed cursus feugiat, ipsum odio accumsan diam, iaculis volutpat enim ligula et lacus. Donec hendrerit pellentesque lectus, tempus gravida orci vulputate ut. Vivamus sed vehicula libero, id imperdiet tellus. Etiam lacinia felis vitae vulputate condimentum. Duis vitae pulvinar elit, ac iaculis mauris. Pellentesque tincidunt interdum elementum. Nunc dictum volutpat mauris, in interdum sem tincidunt eget. Morbi vitae ipsum scelerisque, condimentum magna gravida, eleifend risus. Phasellus ac placerat eros, ac auctor sem. Etiam id orci tempor, suscipit felis vel, ultrices ex. Quisque tempus fringilla libero id aliquam. Quisque et sapien enim. Vestibulum laoreet lacus sit amet efficitur commodo. Mauris lacinia magna at sapien lacinia fringilla ac viverra nibh. Suspendisse tristique consectetur arcu sed pulvinar.</p>
+        </div>
+        <div class="content-3">
+         
+          <h3 style="float: left;"><u>Socio-economic Characteristics.</u></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia leo sit amet diam varius, ac maximus turpis volutpat. Cras interdum nulla orci, eget convallis tellus mollis ac.</p>
+        </div>
+        <div class="content-4">
+          
+          <h3 style="float: left;"><u>Food Security.</u></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia leo sit amet diam varius, ac maximus turpis volutpat. Cras interdum nulla orci, eget convallis tellus mollis ac. Quisque nunc mi, vulputate eget mi id, fringilla rhoncus dui. Morbi rhoncus accumsan rhoncus. Pellentesque ac tellus orci. Mauris facilisis sem eu auctor congue. Praesent at nunc leo. Cras ultricies, orci a placerat auctor, felis erat egestas enim, non porttitor lacus metus at nibh. In sit amet lectus fermentum, gravida turpis nec, dapibus arcu. Cras at nisi faucibus, condimentum odio id, mattis justo. Duis malesuada diam rutrum risus dignissim interdum.</p>
+          <p>
+    Aenean tristique hendrerit sapien in porta. Aliquam feugiat luctus blandit. Cras nunc ex, egestas in consequat ac, egestas vitae lectus. Nunc convallis purus sed ex pretium, sit amet dapibus lorem efficitur. Nulla facilisi. Vivamus ut metus purus. Nam tincidunt faucibus dolor, eget aliquet justo. Nullam turpis ipsum, gravida non lacinia ac, condimentum in sapien. Praesent vulputate dolor ac interdum semper. Nullam sed odio semper, tempor libero ut, pharetra enim. Donec at mattis dolor, eget varius turpis. Aliquam erat volutpat. Nulla bibendum rhoncus felis sed accumsan.</p>
+          <p>
+    Suspendisse vulputate, leo sed cursus feugiat, ipsum odio accumsan diam, iaculis volutpat enim ligula et lacus. Donec hendrerit pellentesque lectus, tempus gravida orci vulputate ut. Vivamus sed vehicula libero, id imperdiet tellus. Etiam lacinia felis vitae vulputate condimentum. Duis vitae pulvinar elit, ac iaculis mauris. Pellentesque tincidunt interdum elementum. Nunc dictum volutpat mauris, in interdum sem tincidunt eget. Morbi vitae ipsum scelerisque, condimentum magna gravida, eleifend risus. Phasellus ac placerat eros, ac auctor sem. Etiam id orci tempor, suscipit felis vel, ultrices ex. Quisque tempus fringilla libero id aliquam. Quisque et sapien enim. Vestibulum laoreet lacus sit amet efficitur commodo. Mauris lacinia magna at sapien lacinia fringilla ac viverra nibh. Suspendisse tristique consectetur arcu sed pulvinar.</p>
+        </div>
+      </div>
+  </section>
+    
+
+  
+    
+  </div>
+
+  <div class="footer">
+    
+
+    Copyright © 2021 All Rights Reserved by Runguma.
+
+    <div class="footer-social-icons">
+      
+      <ul class="social-icons">
+          <li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+          <li><a href="" class="social-icon"> <i class="fa fa-github"></i></a></li>
+      </ul>
+  </div>
+  </div>
+  
+     <!-- /#wrapper -->
+ <!-- partial -->
+ 
+ 
+   
+  
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/mobilemenu.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sidemenu.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+ 
+    
+</body>
+
+</html>
